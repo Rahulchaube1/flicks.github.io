@@ -1,0 +1,154 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f0f4f8;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #1877f2;
+}
+
+h2 {
+    color: #ff6f61;
+    margin: 20px 0 10px;
+}
+
+.charts {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pie-chart {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.slice {
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+    background: var(--color);
+    transform-origin: center;
+    transition: all 0.3s ease;
+}
+
+.slice:nth-child(1) {
+    --color: #ff6f61;
+    transform: rotate(0deg) scale(1);
+}
+
+.slice:nth-child(2) {
+    --color: #28a745;
+    transform: rotate(75deg);
+}
+
+.slice:nth-child(3) {
+    --color: #007bff;
+    transform: rotate(90deg);
+}
+
+.center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+    width: 200px;
+    height: 250px;
+    padding: 5px;
+    border-radius: 1rem;
+    overflow: visible;
+    background: #f7ba2b;
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+}
+
+.card::after {
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    transform: scale(0.8);
+    filter: blur(25px);
+    background: #f7ba2b;
+    background: var(--background);
+    transition: opacity .5s;
+}
+
+.card-info {
+    --color: #181818;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    border-radius: .7rem;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.card .title {
+    font-weight: bold;
+    letter-spacing: .1em;
+    margin-top: 10px;
+}
+
+/* Hover effects */
+.card:hover::after {
+    opacity: 0;
+}
+
+.card:hover .card-info {
+    color: #f7ba2b;
+    transition: color 1s;
+}

@@ -1,0 +1,5 @@
+title: flicks
+description: A brief description of your site.
+theme: jekyll-theme-primer
+baseurl: "" # Leave empty if your site is at the root
+url: "https://rahulchaube1.github.io" # Change to your GitHub username
